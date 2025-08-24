@@ -10,8 +10,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 key = os.getenv('OPENAI_API_KEY')
-stable_difussion_key = os.getenv('STABLE_DIFUSION_API_KEY')
-
 HTML_FOLDER = './html/'
 
 # キーは環境変数に設定
