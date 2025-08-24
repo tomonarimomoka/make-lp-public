@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>飲食店向け在庫管理サービス | 在庫管理のプロフェッショナル</title>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #666;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #0071bc;
+            color: #fff;
+            text-align: center;
+            padding: 80px 0;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        header p {
+            font-size: 1.4em;
+            margin-bottom: 40px;
+        }
+
+        .cta {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .cta a {
+            display: inline-block;
+            padding: 20px 40px;
+            background-color: #ff6a00;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.4em;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .cta a:hover {
+            background-color: #ff9900;
+        }
+
+        .introduction {
+            margin-top: 60px;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .introduction h2 {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .introduction p {
+            line-height: 1.6;
+        }
+
+        .media {
+            margin-top: 60px;
+            padding: 40px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .media h2 {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .media-item {
+            margin-bottom: 20px;
+        }
+
+        .faq {
+            margin-top: 60px;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq h2 {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .form {
+            margin-top: 60px;
+            padding: 40px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form h2 {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .form form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 1.4em;
+            margin-bottom: 8px;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            font-size: 1.2em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-group textarea {
+            height: 120px;
+        }
+
+        .form-group button {
+            padding: 15px 40px;
+            background-color: #0071bc;
+            color: #fff;
+            font-size: 1.4em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .form-group button:hover {
+            background-color: #005a8c;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 80px;
+            padding: 20px 0;
+            background-color: #333;
+            color: #fff;
+        }
+
+        @media screen and (max-width: 768px) {
+            .form form {
+                padding: 0 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>飲食店向け<br>在庫管理サービス</h1>
+            <p>飲食店のための最適な在庫管理ソリューションで、業務を効率化しましょう。</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="cta">
+            <a href="#contact">今すぐ無料でお試しする</a>
+        </div>
+
+        <div class="introduction">
+            <h2>サービスについて</h2>
+            <p>飲食店向け在庫管理サービスは、リアルタイムでの在庫管理や効率的な注文管理、販売分析など、飲食店の運営を支援します。シンプルで使いやすいインターフェースで、誰でも簡単に導入し、即座に業務効率を向上させることができます。</p>
+        </div>
+
+        <div class="media">
+            <h2>メディア掲載実績・体験談</h2>
+            <div class="media-item">
+                <p>導入後、売上が約30%増加しました。効果的な在庫管理ができ、大変満足しています。</p>
+                <p>- 飲食店オーナーA氏</p>
+            </div>
+            <div class="media-item">
+                <p>業界誌に掲載されました。最新のテクノロジーを活用し、競争力を強化しました。</p>
+                <p>- 飲食業界専門誌B社</p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <h2>よくある質問</h2>
+            <div class="faq-item">
+                <h3>Q. サービスの料金体系はどうなっていますか？</h3>
+                <p>A. 当サービスは月額固定料金制です。詳細はお問い合わせください。</p>
+            </div>
+            <div class="faq-item">
+                <h3>Q. 導入の流れを教えてください。</h3>
+                <p>A. まずは無料お試し期間をご利用いただけます。その後、導入の相談からスタートします。</p>
+            </div>
+        </div>
+
+        <div class="form">
+            <h2>お問い合わせ</h2>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">お名前</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">メールアドレス</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">ご質問やお問い合わせ内容</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit">送信する</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 飲食店在庫管理サービス. All rights reserved.
+    </footer>
+</body>
+</html>

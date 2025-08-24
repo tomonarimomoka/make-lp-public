@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="max-w-md mx-auto my-4">
+        ペルソナ設定
+        <form id="my-form" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" action="/submit" method="post">
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="industry">
+                    業界選択
+                </label>
+                <input
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="industry"
+                    type="text"
+                    placeholder="業界を選択してください"
+                    list="industry-list"
+                    name="industry"
+                >
+                <datalist id="industry-list">
+                    <option value="メーカー">
+                    <option value="商社">
+                    <option value="小売">
+                    <option value="ソフトウエア">
+                    <option value="サービス">
+                    <option value="マスコミ">
+                    <option value="金融業">
+                    <option value="公共団体">
+                </datalist>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+                    ターゲット
+                </label>
+                <input
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                    id="target"
+                    type="text"
+                    placeholder="ターゲットを入力してください"
+                    list="target-list"
+                    name="target"
+                >
+                <datalist id="target-list">
+                    <option value="経営者">
+                    <option value="責任者">
+                    <option value="マネージャー">
+                    <option value="作業員">
+                    <option value="消費者">
+                </datalist>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2">
+                    性別
+                </label>
+                <div class="mt-2">
+                <label class="inline-flex items-center">
+                    <input type="radio" class="form-radio text-blue-500" name="gender" value="male" checked>
+                    <span class="ml-2">男性</span>
+                </label>
+                <label class="inline-flex items-center ml-6">
+                    <input type="radio" class="form-radio text-blue-500" name="gender" value="female">
+                    <span class="ml-2">女性</span>
+                </label>
+                <label class="inline-flex items-center ml-6">
+                    <input type="radio" class="form-radio text-blue-500" name="gender" value="other">
+                    <span class="ml-2">その他</span>
+                </label>
+                </div>
+            </div>
+            <div class="mb-6">
+                <label class="block text-gray-700 text-sm font-bold mb-2">
+                    イメージ色
+                </label>
+                <input
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="color"
+                    type="text"
+                    placeholder="イメージ色を入力してください"
+                    list="color-list"
+                    name="color"
+                >
+                <datalist id="color-list">
+                    <option value="赤">
+                    <option value="青">
+                    <option value="緑">
+                    <option value="黄色">
+                    <option value="オレンジ">
+                    <option value="ピンク">
+                    <option value="橙">
+                    <option value="紫">
+                    <option value="水色">
+                    <option value="黄緑">
+                    <option value="茶色">
+                    <option value="白">
+                    <option value="藍">
+                </datalist>
+            </div>
+            <div class="mb-6">
+                <label class="block text-gray-700 text-sm font-bold mb-2">
+                    年齢
+                </label>
+                <input
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="age"
+                    type="number"
+                    placeholder="年齢を入力してください"
+                    name="age"
+                >
+            </div>
+            <div class="mb-6">
+                <label class="block text-gray-700 text-sm font-bold mb-2">
+                    サービス概要
+                </label>
+                <input
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="detail"
+                    type="text"
+                    placeholder="サービス概要を入力してください"
+                    name="detail"
+                >
+            </div>
+            <div class="mb-6">
+                <label class="block text-gray-700 text-sm font-bold mb-2">
+                    参照ページ
+                </label>
+                <input
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="url"
+                    type="text"
+                    placeholder="参照ページURLを入力してください"
+                    name="url"
+                >
+            </div>
+            <div class="flex items-center justify-between">
+                <button
+                    id="submit-btn"
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                    type="submit"
+                    disabled
+                >
+                作成する
+                </button>
+            </div>
+        </form>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const form = document.getElementById('my-form');
+            const inputs = form.querySelectorAll('input');
+            const submitBtn = document.getElementById('submit-btn');
+
+            function checkInputs() {
+                let allFilled = true;
+                inputs.forEach(input => {
+                    if (input.value.trim() === '') {
+                        allFilled = false;
+                    }
+                });
+
+                submitBtn.disabled = !allFilled;
+                if (allFilled) {
+                    submitBtn.classList.remove('bg-gray-400', 'cursor-not-allowed');
+                    submitBtn.classList.add('bg-blue-500', 'hover:bg-blue-700', 'cursor-pointer');
+                } else {
+                    submitBtn.classList.add('bg-gray-400', 'cursor-not-allowed');
+                    submitBtn.classList.remove('bg-blue-500', 'hover:bg-blue-700', 'cursor-pointer');
+                }
+            }
+
+            inputs.forEach(input => {
+                input.addEventListener('input', checkInputs);
+            });
+
+            checkInputs();
+        });
+    </script>
+</body>
+</html>
